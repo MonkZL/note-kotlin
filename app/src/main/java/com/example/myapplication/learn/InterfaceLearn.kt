@@ -11,13 +11,21 @@ interface USB {
 class Mouse : USB {
     override var deviceInfo: String = ""
         get() = field.takeIf { it.isNotEmpty() } ?: "logic Mouse v2.21"
-        set(value) {
-            field = value
-        }
 
     override fun insert() {
         println("insert：deviceInfo：$deviceInfo")
     }
+}
+
+/**
+ * TODO 接口的默认实现
+ */
+interface USB2 {
+    //1.接口 var 也是不能给接口的成员赋值的 （但是有其他方法）
+    //2.任何类 接口 等等 val 代表只读的，是不可以在后面动态赋值（但是有其他方法）
+    //val deviceInfo: String = ""
+    val deviceInfo: String
+        get() = (1..100).shuffled().last().toString()
 }
 
 fun interfaceLearn() {

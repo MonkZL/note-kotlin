@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+                .setAction("Action", null).show()
         }
 
 //        innerFunLearn()
@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
 //        classLearn()
 //        classMoreLearn()
 //        enumLearn()
-        interfaceLearn()
+//        interfaceLearn()
+//        abstractLearn()
+        genericLearn()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

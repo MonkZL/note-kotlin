@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity() {
         setLearn()
         mapLearn()
         classLearn()
+        classMoreLearn()
+        enumLearn()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

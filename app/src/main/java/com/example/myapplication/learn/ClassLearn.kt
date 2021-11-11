@@ -215,6 +215,7 @@ class KtBase8 {
 class KtBase9 {
     //饿汉式
     val databaseData1: String = readSQLServerDatabaseAction()
+
     //懒汉式
     val databaseData2: String by lazy(::readSQLServerDatabaseAction)
     private fun readSQLServerDatabaseAction(): String {
@@ -228,6 +229,46 @@ class KtBase9 {
         return "database data load success ok."
     }
 }
+
+// TODO 类初始化的陷阱1
+class KtBase10 {
+//    这种写法不行 要遵循顺序 声明 和 init是同级的
+//    init {
+//        num = num.times(9)
+//    }
+//    var num = 9
+
+    var num = 9
+
+    init {
+        num = num.times(9)
+    }
+}
+
+// TODO 类初始化的陷阱2
+class KtBase11 {
+    var info: String
+
+    init {
+        getInfoMethod()//这句话放这里会报错，因为此时info为空 调用info[0]自然报错
+        info = "zl"
+        getInfoMethod()//这里info已经初始化 可以使用
+    }
+
+    private fun getInfoMethod() {
+        println("info:${info[0]}")
+    }
+}
+
+// TODO 类初始化的陷阱3
+class KtBase12(_info: String) {
+    val content0: String = getInfoContent()//此时得到的info为null
+    private val info = _info
+    val content1: String = getInfoContent()//此时得到的info已初始化
+    private fun getInfoContent() = info
+}
+
+// TODO 这些类初始化的陷阱可以看出 kotlin 注重声明和初始化的顺序
 
 fun classLearn() {
     /**

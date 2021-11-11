@@ -37,14 +37,15 @@ class MainActivity : AppCompatActivity() {
                     .setAction("Action", null).show()
         }
 
-        innerFunLearn()
-        arrLearn()
-        listLearn()
-        setLearn()
-        mapLearn()
-        classLearn()
-        classMoreLearn()
-        enumLearn()
+//        innerFunLearn()
+//        arrLearn()
+//        listLearn()
+//        setLearn()
+//        mapLearn()
+//        classLearn()
+//        classMoreLearn()
+//        enumLearn()
+        interfaceLearn()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

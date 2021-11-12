@@ -47,7 +47,8 @@ class MainActivity : AppCompatActivity() {
 //        enumLearn()
 //        interfaceLearn()
 //        abstractLearn()
-        genericLearn()
+//        genericLearn()
+        extendFunLearn()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

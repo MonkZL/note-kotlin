@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        g
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

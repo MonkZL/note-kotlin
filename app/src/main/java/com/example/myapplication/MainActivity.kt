@@ -2,17 +2,17 @@ package com.example.myapplication
 
 import android.os.Build
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import androidx.annotation.RequiresApi
 import com.example.myapplication.databinding.ActivityMainBinding
-import com.example.myapplication.learn.*
+import com.example.myapplication.learn.rxJavaTest
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -48,7 +48,10 @@ class MainActivity : AppCompatActivity() {
 //        interfaceLearn()
 //        abstractLearn()
 //        genericLearn()
-        extendFunLearn()
+//        extendFunLearn()
+//        singletonLearn()
+//        main(null);
+        rxJavaTest();
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -1,5 +1,10 @@
 package com.example.myapplication.learn
 
+import com.example.myapplication.learn.ext.randomToGetFirst
+/**
+ * TODO 重命名扩展
+ */
+import com.example.myapplication.learn.ext.randomToGetFirstToPrintln as p
 import java.io.File
 import java.nio.charset.Charset
 import java.util.ArrayList
@@ -58,6 +63,23 @@ inline fun <I, O> I.myLet(lambda: (I) -> O): O = lambda(this)
 val String.myInfo: String
     get() = "AA"
 
+/**
+ * TODO 可空类型扩展
+ */
+fun String?.printlnValue() {
+    println(this)
+}
+
+/**
+ * TODO infix == 中缀表达式 可以简化代码
+ *  自定义 中缀表达式
+ *  1. 对第一个参数 C1.gogogo 函数扩展
+ *  2. 需要在 括号（c2:C2）参数里面，传递一个参数
+ */
+infix fun <C1, C2> C1.gogogo(c2: C2){
+    println("$this,$c2")
+}
+
 fun extendFunLearn() {
 
     //TODO 扩展函数
@@ -89,4 +111,20 @@ fun extendFunLearn() {
     //TODO 属性扩展
     println("zl".myInfo)
 
+    //TODO 可空类型扩展
+    val str: String? = null
+    str.printlnValue()
+    val str1 = "zl"
+    str1.printlnValue()
+
+    //TODO infix == 中缀表达式 可以简化代码
+    println(mapOf("一" to 1))
+    //TODO 自定义 中缀表达式
+    1 gogogo "222"
+
+    //TODO 扩展文件
+    println(listOf(1, 2, 3, 4).randomToGetFirst())
+
+    //TODO 重命名扩展
+    listOf(1, 2, 3, 4).p()
 }
